@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>impostors: start here</title>
+    <link>http://localhost:1313/index.xml</link>
+    <description>Recent content on impostors: start here</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2017 22:23:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>building a blog</title>
+      <link>http://localhost:1313/blog/building-a-blog/</link>
+      <pubDate>Sun, 01 Jan 2017 22:23:53 +0000</pubDate>
+      
+      <guid>http://localhost:1313/blog/building-a-blog/</guid>
+      <description>&lt;p&gt;The first thing I needed to learn when I decided to start a blog about all the things I need to learn was how to start a blog. Apparently you need a nice looking image at the top of the post! I took this one in the Under-5&amp;rsquo;s play area in the Science Museum in London (I was with my kid).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;So first off, I remembered reading a tweet somewhere talking about &lt;a href=&#34;gohugo.io&#34;&gt;Hugo&lt;/a&gt; as a decent alternative to using Wordpress - or anything else - for a blog. I think it was &lt;a href=&#34;www.twitter.com/donzanoid&#34;&gt;Don Williamson&lt;/a&gt;, by the way. I thought &amp;ldquo;Don&amp;rsquo;s a smart dude and I remember trying to use Wordpress that one time, so what can go wrong?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;(Spoiler: It actually went pretty well. Well enough that this blog is being served by Hugo and I didn&amp;rsquo;t drown my laptop in tears trying to make it work.)&lt;/p&gt;
+
+&lt;h3 id=&#34;then-i-typed-hugo-blog-tutorial-into-google&#34;&gt;then i typed &amp;lsquo;hugo blog tutorial&amp;rsquo; into google&lt;/h3&gt;
+
+&lt;p&gt;So I went on Google and typed &amp;ldquo;hugo blog tutorial&amp;rdquo;, and the post from &lt;a href=&#34;https://www.thepolyglotdeveloper.com/2016/03/use-hugo-create-awesome-static-websites-blogs/&#34;&gt;Nic Raboy&lt;/a&gt; looked good. Check it out! It&amp;rsquo;s a no-frills start-em-up with the pros and cons of the platform, and the (approximately 3) things you need to do to get it running. It&amp;rsquo;s kind of not as simple as Wordpress or Blogspot because you have to type stuff, but like I said, it&amp;rsquo;s like 3 things.&lt;/p&gt;
+
+&lt;p&gt;Nic mentions there aren&amp;rsquo;t many good themes for Hugo, but he likes &lt;a href=&#34;http://themes.gohugo.io/future-imperfect/&#34;&gt;Future Imperfect&lt;/a&gt;.
+So I&amp;rsquo;m using that, with a couple of modifications. I wasn&amp;rsquo;t super keen on the default Sans Serif font for the body content so I changed it to &lt;a href=&#34;https://fonts.google.com/specimen/Merriweather&#34;&gt;Merryweather&lt;/a&gt;. And I thought it would be nice to have post previews on the front page rather than the whole thing (for now, at the time of writing, this may change etc), so I monkeyed around with some of the template guts. Hugo uses HTML snippets with a bunch of custom keywords to generate its pages. I created a new snippet called &lt;code&gt;layout/posts/content-preview.html&lt;/code&gt; which is super lame and looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;article class=&amp;quot;post&amp;quot;&amp;gt;
+    {{ .Render &amp;quot;header&amp;quot; }}
+
+    {{ .Render &amp;quot;featured&amp;quot; }}
+    &amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;
+        {{ .Summary }}
+        {{ if .Truncated }}
+        &amp;lt;p&amp;gt;
+        &amp;lt;div class=&amp;quot;read-more-link&amp;quot;&amp;gt;
+            &amp;lt;a href=&amp;quot;{{ .RelPermalink }}&amp;quot;&amp;gt;Read More…&amp;lt;/a&amp;gt;
+        &amp;lt;/div&amp;gt;
+        {{ end }}
+    &amp;lt;/div&amp;gt;
+    &amp;lt;footer&amp;gt;
+        {{ .Render &amp;quot;footer-category&amp;quot; }}
+    &amp;lt;/footer&amp;gt;
+&amp;lt;/article&amp;gt;
+{{ .Render &amp;quot;prev-next&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Which basically shows the top bit. The &lt;code&gt;.Summary&lt;/code&gt; keyword is the important bit, and you have to remember to add &lt;code&gt;&amp;lt;!--more--&amp;gt;&lt;/code&gt; into your post, otherwise it just chooses the first 70 words and mullers the formatting.&lt;/p&gt;
+
+&lt;p&gt;Summary: It&amp;rsquo;s a bit cack but I guess it works?&lt;/p&gt;
+
+&lt;h3 id=&#34;then-i-realised-i-needed-to-host-it-somewhere&#34;&gt;then i realised i needed to host it somewhere&lt;/h3&gt;
+
+&lt;p&gt;Again, I randomly read that using Github pages is a good idea! So that is what I&amp;rsquo;m doing.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>about this thing and also me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Fri, 30 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;I &lt;strong&gt;am&lt;/strong&gt; these things: Husband, dad, follower of Jesus.&lt;/p&gt;
+
+&lt;p&gt;I &lt;strong&gt;do&lt;/strong&gt; these things: Make games, write code, be a boss to some rad people at &lt;a href=&#34;https://www.glowmade.com&#34;&gt;glowmade&lt;/a&gt;, learn interesting things, write occasionally, play piano occasionally, walk my dog &lt;a href=&#34;http://www.twitter.com/frankwonderpug&#34;&gt;Frank&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s an important distinction there. I am not what I do.&lt;/p&gt;
+
+&lt;p&gt;And there are a great many things I don&amp;rsquo;t know. And there are a lot of people who clearly know many things. Naturally, I spotted a gap in the market - nobody blogs about the things they don&amp;rsquo;t know much about at all.&lt;/p&gt;
+
+&lt;p&gt;So this is my attempt to record what I learn as the mood strikes / as I get time. I&amp;rsquo;m writing it down for my own reference - because I will obviously forget - and perhaps it will be useful to someone else too.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
